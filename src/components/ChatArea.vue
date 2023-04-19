@@ -3,6 +3,10 @@
     <h1>{{ h1 }}</h1>
   </section>
   <section class="chat_area">
+    <div class="user" v-show="messages.length != 0">
+      <p class="identific">Você diz:</p>
+      <p class="mensagem" v-for="(message, index) in messages" :key="index">{{ message }}</p>
+    </div>
   </section>
 </template>
 
@@ -11,7 +15,10 @@
 export default {
   name: 'ChatArea',
   props: {
-    h1: String
+    h1: String,
+    messages: {
+      Array
+    }
   }
 }
 </script>

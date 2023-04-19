@@ -1,13 +1,36 @@
 <template>
+  <ChatArea h1='Atendimento On-line' />
   <section class="send_area">
-    <input type="text" id="txt_input" class="txt_input" placeholder="Digite sua mensagem..." />
-    <button type="button" class="btn_send">Enviar</button>
+    <input type="text" id="txt_input" class="txt_input" placeholder="Digite sua mensagem..." v-model="message" />
+    <button type="button" class="btn_send" @click="sendMessage">Enviar</button>
   </section>
 </template>
 
 <script>
+import ChatArea from './ChatArea.vue'
+
 export default {
-  name: 'SendArea'
+  name: 'SendArea',
+  components: {
+    ChatArea
+  },
+  data() {
+    return {
+      messages: [],
+    }
+  },
+
+  methods: {
+    sendMessage() {
+      if (this.message === '') {
+        return
+      }
+      this.messages.push(this.message);
+      this.message = '';
+      console.log(this.messages);
+    }
+
+  }
 }
 </script>
 

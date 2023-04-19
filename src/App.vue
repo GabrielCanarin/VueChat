@@ -3,19 +3,17 @@
     <img src="./assets/Karta_logo.svg" class="Logo" alt="Karta logo">
   </header>
   <main class="container">
-    <ChatArea h1='Atendimento On-line' />
+    <p background="#000">aaa</p>
     <SendArea />
   </main>
 </template>
 
 <script>
-import ChatArea from './components/ChatArea.vue'
 import SendArea from './components/SendArea.vue'
 
 export default {
   name: 'App',
   components: {
-    ChatArea,
     SendArea
   }
 }
