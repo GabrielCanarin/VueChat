@@ -1,8 +1,10 @@
 <template>
-  <ChatArea h1='Atendimento On-line' />
-  <section class="send_area">
-    <input type="text" id="txt_input" class="txt_input" placeholder="Digite sua mensagem..." v-model="message" />
-    <button type="button" class="btn_send" @click="sendMessage">Enviar</button>
+  <section>
+    <ChatArea h1='Atendimento On-line' />
+    <section class="send_area">
+      <input type="text" id="txt_input" class="txt_input" placeholder="Digite sua mensagem..." v-model="message" />
+      <button type="button" class="btn_send" @click="sendMessage">Enviar</button>
+    </section>
   </section>
 </template>
 
@@ -17,9 +19,9 @@ export default {
   data() {
     return {
       messages: [],
+      message: ''
     }
   },
-
   methods: {
     sendMessage() {
       if (this.message === '') {
@@ -29,7 +31,6 @@ export default {
       this.message = '';
       console.log(this.messages);
     }
-
   }
 }
 </script>

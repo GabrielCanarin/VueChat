@@ -3,7 +3,6 @@
     <img src="./assets/Karta_logo.svg" class="Logo" alt="Karta logo">
   </header>
   <main class="container">
-    <p background="#000">aaa</p>
     <SendArea />
   </main>
 </template>
