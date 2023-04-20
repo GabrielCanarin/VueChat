@@ -3,9 +3,9 @@
     <h1>{{ h1 }}</h1>
   </section>
   <section class="chat_area">
-    <div class="user" v-show="messages.length != 0">
+    <div class="user" v-show="messages?.length != 0" v-for="(message, index) in messages" :key="index">
       <p class="identific">Você diz:</p>
-      <p class="mensagem" v-for="(message, index) in messages" :key="index">{{ message }}</p>
+      <p class="mensagem">{{ message }}</p>
     </div>
   </section>
 </template>
@@ -16,17 +16,18 @@ export default {
   props: {
     h1: String,
     messages: {
-      Array
+      type: Array,
     }
   }
 }
+
 </script>
 
 <style>
 .inf_area {
   background: #4B4B4B;
   border-radius: 20px 20px 0px 0px;
-  margin: 10px 0px -40px 0px;
+  margin: 10px 0px -60px 0px;
 }
 
 h1 {
@@ -36,7 +37,7 @@ h1 {
   font-size: 36px;
   color: #B590E5;
   text-shadow: 0px 1px 5px #C090FC;
-  padding: 0px 40px 20px 40px;
+  padding: 20px 40px 40px 40px;
 }
 
 .chat_area {

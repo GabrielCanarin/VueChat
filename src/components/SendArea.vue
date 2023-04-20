@@ -1,6 +1,6 @@
 <template>
   <section>
-    <ChatArea h1='Atendimento On-line' />
+    <ChatArea h1='Atendimento On-line' :messages="messages" />
     <section class="send_area">
       <input type="text" id="txt_input" class="txt_input" placeholder="Digite sua mensagem..." v-model="message" />
       <button type="button" class="btn_send" @click="sendMessage">Enviar</button>
@@ -29,7 +29,6 @@ export default {
       }
       this.messages.push(this.message);
       this.message = '';
-      console.log(this.messages);
     }
   }
 }

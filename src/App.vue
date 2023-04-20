@@ -24,6 +24,7 @@ body {
   font-family: 'Lato', sans-serif;
   font-family: 'Waiting for the Sunrise', cursive;
   display: flex;
+  box-sizing: border-box;
 }
 
 #app {
